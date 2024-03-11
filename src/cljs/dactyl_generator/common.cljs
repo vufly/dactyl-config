@@ -78,7 +78,9 @@
         stagger-ring   (get c :configuration-stagger-ring)
         stagger-pinky  (get c :configuration-stagger-pinky)]
     (if stagger?
-      (cond (= column 2) stagger-middle
+      (cond (= column -1) [0, -7.5, 0]
+            (= column 0) [0, -1.5, 0]
+            (= column 2) stagger-middle
             (= column 3) stagger-ring
             (>= column 4) stagger-pinky
             :else stagger-index)
